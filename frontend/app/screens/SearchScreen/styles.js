@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   inputBox: {
     height: 60,
     width: "100%",
-    backgroundColor: "#ff5b77",
+    backgroundColor: "#b80733",
     justifyContent: "center",
     alignContent: "center",
     alignItems: "center",

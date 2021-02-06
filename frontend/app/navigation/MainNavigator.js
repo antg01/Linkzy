@@ -50,8 +50,8 @@ const MainNavigator = () => {
 
 // Main navigation options
 const tabOptions = {
-  activeBackgroundColor: "#F25C75",
-  inactiveBackgroundColor: "#F25C75",
+  activeBackgroundColor: "#b80733",
+  inactiveBackgroundColor: "#b80733",
   activeTintColor: "#FFF",
   inactiveTintColor: "#000",
   showLabel: false,
