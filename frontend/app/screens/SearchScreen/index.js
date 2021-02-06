@@ -77,6 +77,7 @@ const SearchScreen = () => {
       .then((response) => {
         setData(response.data);
         console.log(response.data);
+        setFocus2(false);
       })
       .catch((error) => {
         console.log(error);
@@ -93,7 +94,7 @@ const SearchScreen = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [focus2]);
+  }, [!modalVisible]);
 
   const submitEvent = (data) => {
     const output = [
@@ -119,7 +120,7 @@ const SearchScreen = () => {
       })
       .then((response) => {
         console.log("posted");
-        setFocus2(true);
+
         setModalVisible(!modalVisible);
       })
       .catch((error) => {
