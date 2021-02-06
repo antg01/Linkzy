@@ -17,6 +17,7 @@ const FormTemplate = (props) => {
   const [formValues, setFormValues] = useState([...props.inputs]);
 
   const changeHandler = (newValue, input) => {
+    console.log("NEWVALUE", newValue);
     setFormValues((prev) => {
       const updatedInput = { ...input, value: newValue };
       const filteredArray = prev.filter((item) => item.id !== input.id);

@@ -67,6 +67,7 @@ const SearchScreen = () => {
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
   const isFocused = useIsFocused();
+  const [focus2, setFocus2] = useState(false);
 
   const API_ENDPOINT = `http://${ipAdd}:4000/api/news`;
 
@@ -82,6 +83,18 @@ const SearchScreen = () => {
       });
   }, [isFocused]);
 
+  useEffect(() => {
+    axios
+      .get(API_ENDPOINT)
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [focus2]);
+
   const submitEvent = (data) => {
     const output = [
       // { category: categories.category, image: categories.imageUri },
@@ -95,15 +108,18 @@ const SearchScreen = () => {
     const description = output.filter((item) => item.field === "Description")[0]
       .value;
     console.log(description);
+    const picture = output.filter((item) => item.field === "image")[0].value;
+    console.log(picture);
 
     axios
       .post(`http://${ipAdd}:4000/api/news`, {
         title,
         description,
+        picture,
       })
       .then((response) => {
         console.log("posted");
-
+        setFocus2(true);
         setModalVisible(!modalVisible);
       })
       .catch((error) => {
@@ -117,9 +133,7 @@ const SearchScreen = () => {
   // };
 
   const maping = () => {
-    return data
-      .map((feed) => <CardFeed key={feed.key} feed={feed} />)
-      .reverse();
+    return data.map((feed) => <CardFeed key={feed.id} feed={feed} />).reverse();
   };
 
   const handlePress = () => {
