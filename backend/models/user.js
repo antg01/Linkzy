@@ -12,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Event, { foreignKey: 'host' });
       User.hasMany(models.Participant, { foreignKey: 'userId' });
       User.hasMany(models.User_Activity, { foreignKey: 'userId' });
+      User.hasMany(models.News, { foreignKey: 'userId' });
+      User.hasMany(models.Comment, { foreignKey: 'userId' });
     }
   }
   User.init(

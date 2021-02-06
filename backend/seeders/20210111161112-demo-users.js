@@ -10,7 +10,6 @@ module.exports = {
           email: 'jd@test.com',
           image: 'xxx',
           password: 'test123',
-          birthday: new Date('December 17, 1995 03:24:00'),
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -19,7 +18,6 @@ module.exports = {
           email: 'mm@test.com',
           image: 'xxx',
           password: 'test123',
-          birthday: new Date('January 20, 1992 03:24:00'),
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -28,7 +26,6 @@ module.exports = {
           email: 'ws@test.com',
           image: 'xxx',
           password: 'test123',
-          birthday: new Date('March 12, 1989 03:24:00'),
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -37,7 +34,6 @@ module.exports = {
           email: 'jb@test.com',
           image: 'xxx',
           password: 'test123',
-          birthday: new Date('March 12, 1989 03:24:00'),
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -46,7 +42,6 @@ module.exports = {
           email: 'ew@test.com',
           image: 'xxx',
           password: 'test123',
-          birthday: new Date('March 12, 1989 03:24:00'),
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -55,7 +50,6 @@ module.exports = {
           email: 'mb@test.com',
           image: 'xxx',
           password: 'test123',
-          birthday: new Date('March 12, 1989 03:24:00'),
           createdAt: new Date(),
           updatedAt: new Date()
         }
