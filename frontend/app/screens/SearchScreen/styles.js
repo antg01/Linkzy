@@ -30,12 +30,23 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   input: {
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
     height: 45,
     width: "95%",
     backgroundColor: "#fff",
     borderRadius: 20,
     padding: 5,
     paddingLeft: 10,
+  },
+  insidetext: {
+    justifyContent: "center",
+    padding: 100,
+  },
+  text: {
+    width: "100%",
+    color: "darkgray",
   },
   events: {
     display: "flex",
@@ -85,6 +96,9 @@ const styles = StyleSheet.create({
   cardDetails: {
     fontSize: 12,
     color: "#444",
+  },
+  modal: {
+    backgroundColor: "white",
   },
 });
 export default styles;
