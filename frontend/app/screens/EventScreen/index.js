@@ -6,6 +6,7 @@ import { useIsFocused } from "@react-navigation/native";
 
 // local import
 import styles from "./styles";
+import BigEventCard from "../../components/BigEventCard/index.js";
 import EventsTemplate from "../../components/EventsTemplate/index.js";
 import eventTest from "../../utils/eventTest.js";
 import hobbiesTest from "../../utils/hobbiesTest.js";
@@ -31,7 +32,7 @@ const EventScreen = (props) => {
 
   const maping = () => {
     return eventTest.map((event) => (
-      <EventsTemplate key={event.key} event={event} />
+      <BigEventCard key={event.key} event={event} />
     ));
   };
 
@@ -58,33 +59,21 @@ const EventScreen = (props) => {
           />
         </View>
 
-        <Text style={styles.textHead}>Deals of the week</Text>
+        <Text style={styles.textHead}>Main events</Text>
         <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-          <View style={styles.event}>
-            {mapingEventDB()}
-            {maping()}
-          </View>
-        </ScrollView>
-
-        <Text style={styles.text}>Events Today</Text>
-        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-          <View style={styles.event}>{maping()}</View>
+          <View style={styles.Bigevent}>{maping()}</View>
         </ScrollView>
 
         <Text style={styles.text}>All events</Text>
-        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-          <View style={styles.event}>{maping()}</View>
-        </ScrollView>
-
-        <Text style={styles.text}>Your events</Text>
-        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-          <View style={styles.event}>{maping()}</View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.event}>{mapingEventDB()}</View>
         </ScrollView>
       </ScrollView>
+
       <FabsTemplate
         handlePress={() => props.navigation.navigate("HobbiesScreen")}
         name={"pluscircle"}
-        color={"#rgba(21,133,130, 1)"}
+        color={"#b80733"}
       />
     </View>
   );
