@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Comment.hasOne(models.User,{foreignKey: "userId"})
+      Comment.hasOne(models.News,{foreignKey: "newsId"})
     }
   };
   Comment.init({

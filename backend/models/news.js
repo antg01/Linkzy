@@ -12,14 +12,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       News.hasOne(models.User,{foreignKey: "userId"})
+      News.hasMany(models.Comment,{foreignKey: "newsId"})
     }
   };
   News.init({
-    description: DataTypes.STRING,
-    picture: DataTypes.STRING
+    id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+    description: DataTypes.TEXT,
+    picture: DataTypes.STRING,
+    title:DataTypes.STRING
+
   }, {
     sequelize,
     modelName: 'News',
   });
-  return New;
+  return News;
 };
