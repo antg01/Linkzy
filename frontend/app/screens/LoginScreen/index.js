@@ -53,6 +53,7 @@ const LoginScreen = (props) => {
       console.log(error);
     }
     if (response) {
+      console.log(response.data);
       dispatch({
         type: "LOGIN",
         payload: {

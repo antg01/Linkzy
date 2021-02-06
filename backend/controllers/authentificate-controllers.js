@@ -108,6 +108,7 @@ const login = async (req, res, next) => {
   const { email, password } = req.body;
 
   let user;
+  console.log("TEST", email);
   try {
     user = await User.findOne({
       where: {

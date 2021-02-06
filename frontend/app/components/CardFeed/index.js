@@ -38,7 +38,9 @@ const CardFeed = ({ feed }) => {
           <CardItem>
             <Body>
               <Image
-                source={feed.imageUri}
+                source={{
+                  uri: feed.picture,
+                }}
                 style={{ height: 150, width: "100%", flex: 1 }}
               />
               <Text>{feed.description}</Text>

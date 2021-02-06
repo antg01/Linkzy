@@ -7,6 +7,7 @@ import {
   FlatList,
   Modal,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import axios from "axios";
 import filter from "lodash.filter";
@@ -46,6 +47,16 @@ const editForm = [
     autoCapitalize: "none",
     value: "",
   },
+  {
+    id: 3,
+    render: "image",
+    label: "image",
+    multiline: true,
+    type: "none",
+    security: false,
+    autoCapitalize: "none",
+    value: "",
+  },
 ];
 
 const SearchScreen = () => {
@@ -64,6 +75,7 @@ const SearchScreen = () => {
       .get(API_ENDPOINT)
       .then((response) => {
         setData(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -91,21 +103,23 @@ const SearchScreen = () => {
       })
       .then((response) => {
         console.log("posted");
-        () => {
-          setModalVisible(!modalVisible);
-        };
+
+        setModalVisible(!modalVisible);
       })
       .catch((error) => {
         console.log("error");
       });
   };
 
-  const mapingEventDB = ({ item }) => {
-    return <CardFeed id={feed.id} feed={feed} />;
-  };
+  // const mapingEventDB = ({ item }) => {
+  //   console.log("item", item);
+  //   return <CardFeed key={item.id} id={item.id} feed={item} />;
+  // };
 
   const maping = () => {
-    return feed.map((feed) => <CardFeed key={feed.key} feed={feed} />);
+    return data
+      .map((feed) => <CardFeed key={feed.key} feed={feed} />)
+      .reverse();
   };
 
   const handlePress = () => {
@@ -138,12 +152,14 @@ const SearchScreen = () => {
         <Image style={styles.logo} source={logo} />
         <Text style={styles.filter}>My Feed</Text>
         <Intext onPres={handlePress} />
-        {/* <FlatList
-          data={data}
-          keyExtractor={(item) => item.title}
-          renderItem={mapingEventDB}
-          showsVerticalScrollIndicator={false}
-        /> */}
+        {/* <SafeAreaView>
+          <FlatList
+            data={data}
+            keyExtractor={(item) => item.id}
+            renderItem={mapingEventDB}
+            showsVerticalScrollIndicator={false}
+          />
+        </SafeAreaView> */}
       </View>
       <ScrollView>{maping()}</ScrollView>
     </View>

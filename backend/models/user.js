@@ -1,5 +1,5 @@
-'use strict';
-const { Model } = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.hasMany(models.Event, { foreignKey: 'host' });
-      User.hasMany(models.Participant, { foreignKey: 'userId' });
-      User.hasMany(models.User_Activity, { foreignKey: 'userId' });
-      User.hasMany(models.News, { foreignKey: 'userId' });
-      User.hasMany(models.Comment, { foreignKey: 'userId' });
+      User.hasMany(models.Event, { foreignKey: "host" });
+      User.hasMany(models.Participant, { foreignKey: "userId" });
+      User.hasMany(models.User_Activity, { foreignKey: "userId" });
+      User.hasMany(models.News, { foreignKey: "userId" });
+      User.hasMany(models.Comment, { foreignKey: "userId" });
     }
   }
   User.init(
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       fullName: DataTypes.STRING,
       email: DataTypes.STRING,
       image: DataTypes.STRING,
-      password: DataTypes.STRING
+      password: DataTypes.STRING,
       // birthday: DataTypes.DATE,
       // preference: DataTypes.JSON,
       // country: DataTypes.STRING,
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'User'
+      modelName: "User",
     }
   );
   return User;
