@@ -1,6 +1,7 @@
 Linkzy Project hackathon SDworks
 
-Social app for events managment and news feed
+Social app for events managment and news feed.
+Spielberg Consultant Agency and SD Worx organized a 48h long hackathon. The idea was to deliver a concept that reinforce employees involvement and satisfaction within a firm. my team did fourth place out of fifteen.
 
 Launch app -> cd frontend - npm start
 -> cd backend - npm start
